@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+   <meta charset="utf-8" />
+   <title>Guest2Web | Player</title>
+   <meta name="author" content="Faizal" />
+
+   <!-- optimize mobile versions -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- styles -->
+   <link href="css/stylesheet.css" rel="stylesheet" />
+   <link href="css/responsive.css" rel="stylesheet" />
+
+   <!-- Flowplayer depends on jquery -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+   <!-- Flowplayer-->
+   <script src="http://releases.flowplayer.org/js/flowplayer-3.2.11.min.js"></script>
+
+   <script type='text/javascript'>
+   $(document).ready(function () {
+        var spotxChannelId = "74856";
+        var spotxPageUrl = encodeURIComponent(window.location);
+        var randomNumber = Math.floor(Math.random()*1000000);
+        var adTag = "http://search.spotxchange.com/vast/2.00/74856?content_page_url="+spotxPageUrl+"__amp__cb="+randomNumber;
+        console.log(adTag);
+
+       $f("player", "http://releases.flowplayer.org/swf/flowplayer-3.2.15.swf", {
+          "playlist": [
+          {
+            "url": "http://content.bitsontherun.com/videos/Qvxp3Jnv-483.mp4",
+            "duration": 25
+          }
+         ],
+          plugins: {
+              controls: {
+                "autoHide": "never"
+            },
+            ova: {
+              "url": "http://player.longtailvideo.com/flowplayer/ova-trial.swf",
+              "autoPlay": true,
+              "debug": { "levels": "all, config, vast_template" },
+              "ads": {
+                "notice": {
+                    "type": "countdown"
+                },
+                "playOnce": false,
+              "servers": [
+                 {
+                     "type": "OpenX",
+                     //"apiAddress": "http://openx.openvideoads.org/openx/www/delivery/fc.php"
+                     "apiAddress": "http://ec2-54-245-138-130.us-west-2.compute.amazonaws.com"
+                 }
+              ],
+              "schedule": [
+              {
+                  "zone": "1",
+                  "position": "pre-roll",
+                  "refreshOnReplay": true,
+                  "server": {
+                    "tag": adTag
+                  }
+              }
+              ]
+            },
+              "analytics": {
+                "google": {
+                    "custom": {
+                        "accountId": "UA-37457117-3",
+                        "vpaid": {
+                            "enable": true
+                        }
+                    }
+                }
+            }
+    }
+}
+});
+});
+
+</script>
+
+</head>
+
+<body style="background-image: url(http://www.cloudtrax.com/users/test%20location/work/images/backgroundsplash-rest.jpg); background-color: #0e0e0e;">
+   <div class="container">
+       <!-- Logo -->
+       <div class="page-header"><img alt="WiFi Logo" src="img/Wi_Fi_Logo.png" width="120" height="47" /> 
+       </div>
+ 
+       <!-- Main Content -->
+       <div id="content" style="display: block;">
+        <h1 style="margin-top:0px; text-align:center;"><font face="Georgia, Arial, Garamond">Begin browsing after the video</font></h1>
+            <div id="player" class="player" style="height:300px"></div>
+    </div>
+    <div style="clear: both"></div>
+    <br/><br/>
+    <!-- Footer -->
+    <div>
+       <p align="center"><small>&#169; 2013 Guest2Web</small></p>
+   </div>
+</div>
+<!-- /container -->
+<div></div>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-37457117-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+</body>
+</html>
