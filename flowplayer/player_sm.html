@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+   <meta charset="utf-8" />
+   <title>Guest2Web | Player - Selectable Media</title>
+   <meta name="author" content="Faizal" />
+
+   <!-- optimize mobile versions -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- styles -->
+   <link href="css/stylesheet.css" rel="stylesheet" />
+   <link href="css/responsive.css" rel="stylesheet" />
+  
+   <!-- Selectable Media setup -->
+   <script type="text/javascript">
+
+    window._sm_plcmnt = "Guest_2_Web_Test_5240_5132"; // DO NOT CHANGE
+
+    // OPTIONAL CALLBACKS:
+    //window._sm_augur_completed_with_ads = 'callback1';
+    //window._sm_augur_completed_no_ads = 'callback2';
+
+    // called by body onload event handler
+    function startSelectableMedia() {
+          SM_Augur.init();
+    }
+   </script>
+
+   <!-- Selectable Media js -->
+   <script src="https://cdn.selectablemedia.com/ng/js/augur.js" type="text/javascript" charset="utf-8"></script>
+   <script src="https://cdn.selectablemedia.com/ng/pub.js"></script>
+</head>
+
+<body style="background-image: url(http://www.cloudtrax.com/users/test%20location/work/images/backgroundsplash-rest.jpg); background-color: #0e0e0e;" onload="startSelectableMedia();">
+   <div class="container">
+       <!-- Logo -->
+       <div class="page-header"><img alt="WiFi Logo" src="img/Wi_Fi_Logo.png" width="120" height="47" /> 
+       </div>
+ 
+       <!-- Main Content -->
+       <div id="content" style="display: block;">
+        <h1 style="margin-top:0px; text-align:center;"><font face="Georgia, Arial, Garamond">Begin browsing after the video</font></h1>
+            <div id="player" class="player" style="height:100px"></div>
+    </div>
+    <div style="clear: both"></div>
+    <br/><br/>
+    <!-- Footer -->
+    <div>
+       <p align="center"><small>&#169; 2013 Guest2Web</small></p>
+   </div>
+</div>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-37457117-4']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+</body>
+</html>
