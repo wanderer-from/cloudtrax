@@ -19,12 +19,24 @@
     window._sm_plcmnt = "Guest_2_Web_Test_5240_5132"; // DO NOT CHANGE
 
     // OPTIONAL CALLBACKS:
-    //window._sm_augur_completed_with_ads = 'callback1';
-    //window._sm_augur_completed_no_ads = 'callback2';
+    window._sm_augur_completed_with_ads = 'adsWatched';
+    window._sm_augur_completed_no_ads = 'noAdsWatched';
 
     // called by body onload event handler
     function startSelectableMedia() {
           SM_Augur.init();
+    }
+
+    // called after user has watched an ad
+    function adsWatched() {
+          console.debug("adsWatched");
+          document.getElementById("instructions").innerHTML = "Thank you. You are now connected to the Internet!"
+    }
+
+    // called when there are no videos to watch so just connect to web
+    function noAdsWatched() {
+          console.debug("noAdsWatched");
+          document.getElementById("instructions").innerHTML = "You are now connected to the Internet."
     }
    </script>
 
@@ -41,7 +53,7 @@
  
        <!-- Main Content -->
        <div id="content" style="display: block;">
-        <h1 style="margin-top:0px; text-align:center;"><font face="Georgia, Arial, Garamond">Begin browsing after the video</font></h1>
+        <h1 id="instructions" style="margin-top:0px; text-align:center;"><font face="Georgia, Arial, Garamond">Connecting...</font></h1>
             <div id="player" class="player" style="height:100px"></div>
     </div>
     <div style="clear: both"></div>
