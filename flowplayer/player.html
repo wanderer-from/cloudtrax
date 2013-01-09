@@ -22,7 +22,7 @@
    <script type='text/javascript'>
    $(document).ready(function () {
         var spotxChannelId = "74856";
-        var spotxPageUrl = encodeURIComponent(window.location);
+        var spotxPageUrl = encodeURIComponent(window.location.href);
         var randomNumber = Math.floor(Math.random()*1000000);
         var adTag = "http://search.spotxchange.com/vast/2.00/74856?content_page_url="+spotxPageUrl+"__amp__cb="+randomNumber;
         console.log(adTag);
