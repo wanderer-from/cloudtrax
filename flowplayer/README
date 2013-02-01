@@ -1,0 +1,6 @@
+The splash players are copied exactly as they are in CloudTrax.
+In order to test them, you must run the demo.sh script to remove CloudTrax-specific code.
+Example:
+	../tools/demo.sh splash.html
+
+After doing so, open the file called demo_splash.html and you will be able to see a cleaned version of the code.

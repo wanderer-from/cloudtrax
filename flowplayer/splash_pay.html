@@ -3,36 +3,36 @@
 <html lang="en">
      <head>
          <meta charset="utf-8" />
-         <title>Test Location | Connect</title>
+         <title>$gatewayname | Connect</title>
          <meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
          <meta name="description" content="" />
          <meta name="author" content="Faizal" />
          <!-- styles -->
-         <link href="css/stylesheet.css" rel="stylesheet" />
-         <link href="css/responsive.css" rel="stylesheet" />
+         <link href="/splash/templates/stylesheet.css" rel="stylesheet" />
+         <link href="/splash/templates/responsive.css" rel="stylesheet" />
          <style type="text/css">
          /** This template is responsive, which means it scales down to mobile phones using a variation in the stylesheets above. However, you can still add any custom styles or style overrides here. To edit the content of your page, the logo and the header image, scroll down. Enjoy! **/ </style>
 <script language="javascript" type="text/javascript">
-                       function toggle_visibility(id) {
-                          var e = document.getElementById(id);
-                          if(e.style.display == 'block')
-                             e.style.display = 'none';
-                          else
-                             e.style.display = 'block';
-                       }
+                               function toggle_visibility(id) {
+                                  var e = document.getElementById(id);
+                                  if(e.style.display == 'block')
+                                     e.style.display = 'none';
+                                  else
+                                     e.style.display = 'block';
+                               }
 </script></head>
 <!-- Change the background color and add an image here -->
 <body style="background-image: url(http://www.cloudtrax.com/users/test%20location/work/images/backgroundsplash-rest.jpg); background-color: #0e0e0e;">
      <div class="container">
      <!-- Logo -->
-     <div class="page-header"><img alt="CloudTrax Logo" src="img/Wi_Fi_Logo.png" width="120" height="47" /> </div>
+     <div class="page-header"><img alt="CloudTrax Logo" src="/users/test%20location/work/images/Wi_Fi_Logo.png" width="120" height="47" /> </div>
      <!-- Header Image * ID "rounded" automatically adds rounded corners -->
-     <div id="rounded"><img alt="Header photo 800x166" src="http://www.cloudtrax.com/users/test%20location/work/images/header-rest.jpg" /> </div>
+     <div id="rounded"><img alt="Header photo 800x166" src="/users/test%20location/work/images/header-rest.jpg" /> </div>
      <!-- Main Content -->
      <!-- Left Column -->
      <div class="row">
      <div class="span4">
-     <h1>Welcome to Test Location</h1>
+     <h1>Welcome to $gatewayname</h1>
      <div class="mobileonly"><a class="showLink" onclick="toggle_visibility('welcome');">
      <p>Show/Hide Welcome Message and Terms</p>
      </a></div>
@@ -92,16 +92,23 @@
      <h3>Premium Access:</h3>
      <!-- PayPal Button Start -->
      <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-     <input type="hidden" name="cmd" value="_s-xclick">
-     <input type="hidden" name="hosted_button_id" value="BVRU67JBDDRLG">
-     <table>
-     <tr><td><input type="hidden" name="on0" value="Higher Speed, No Ads">Higher Speed, No Ads</td></tr><tr><td><select name="os0">
-        <option value="24 Hours">24 Hours $4.99 USD</option>
-     </select> </td></tr>
-     </table>
-     <input type="hidden" name="currency_code" value="USD">
-     <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-     <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+         <input type="hidden" name="cmd" value="_s-xclick" />
+         <input type="hidden" name="hosted_button_id" value="BVRU67JBDDRLG" />
+         <table>
+             <tbody>
+                 <tr>
+                     <td><input type="hidden" name="on0" value="Higher Speed, No Ads" />Higher Speed, No Ads</td>
+                 </tr>
+                 <tr>
+                     <td><select name="os0">
+                     <option value="24 Hours">24 Hours $4.99 USD</option>
+                     </select> </td>
+                 </tr>
+             </tbody>
+         </table>
+         <input type="hidden" name="currency_code" value="USD" />
+         <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
+         <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
      </form>
      <!-- PayPal Button End -->
      </div>
@@ -109,7 +116,7 @@
      <h3>Passcode Access:</h3>
      <p>Enter your access code below:</p>
      <!-- Voucher Error messages (not found, expired, etc) will be displayed using this variable - do not remove -->
-     <p class="error"></p>
+     <p class="error">$error_msg</p>
      <!-- This the the "Enter" button for "Voucher" networks. -->
      <form method="get" action="$authaction">
          <input name="tok" value="$tok" type="hidden" />
@@ -136,13 +143,13 @@
      <div></div>
      <!-- Google Analytics -->
 <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-37457117-2']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-37457117-2']);
+                _gaq.push(['_trackPageview']);
+                (function() {
+                  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
 </script></body>
 </html>

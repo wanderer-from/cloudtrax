@@ -3,36 +3,36 @@
 <html lang="en">
      <head>
          <meta charset="utf-8" />
-         <title>Test Location | Connect</title>
+         <title>$gatewayname | Connect</title>
          <meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
          <meta name="description" content="" />
          <meta name="author" content="Faizal" />
          <!-- styles -->
-         <link href="css/stylesheet.css" rel="stylesheet" />
-         <link href="css/responsive.css" rel="stylesheet" />
+         <link href="/splash/templates/stylesheet.css" rel="stylesheet" />
+         <link href="/splash/templates/responsive.css" rel="stylesheet" />
          <style type="text/css">
          /** This template is responsive, which means it scales down to mobile phones using a variation in the stylesheets above. However, you can still add any custom styles or style overrides here. To edit the content of your page, the logo and the header image, scroll down. Enjoy! **/ </style>
 <script language="javascript" type="text/javascript">
-                       function toggle_visibility(id) {
-                          var e = document.getElementById(id);
-                          if(e.style.display == 'block')
-                             e.style.display = 'none';
-                          else
-                             e.style.display = 'block';
-                       }
+                               function toggle_visibility(id) {
+                                  var e = document.getElementById(id);
+                                  if(e.style.display == 'block')
+                                     e.style.display = 'none';
+                                  else
+                                     e.style.display = 'block';
+                               }
 </script></head>
 <!-- Change the background color and add an image here -->
 <body style="background-image: url(http://www.cloudtrax.com/users/test%20location/work/images/backgroundsplash-rest.jpg); background-color: #0e0e0e;">
      <div class="container">
      <!-- Logo -->
-     <div class="page-header"><img alt="CloudTrax Logo" src="img/Wi_Fi_Logo.png" width="120" height="47" /> </div>
+     <div class="page-header"><img alt="CloudTrax Logo" src="/users/test%20location/work/images/Wi_Fi_Logo.png" width="120" height="47" /> </div>
      <!-- Header Image * ID "rounded" automatically adds rounded corners -->
-     <div id="rounded"><img alt="Header photo 800x166" src="http://www.cloudtrax.com/users/test%20location/work/images/header-rest.jpg" /> </div>
+     <div id="rounded"><img alt="Header photo 800x166" src="/users/test%20location/work/images/header-rest.jpg" /> </div>
      <!-- Main Content -->
      <!-- Left Column -->
      <div class="row">
      <div class="span4">
-     <h1>Welcome to Test Location</h1>
+     <h1>Welcome to $gatewayname</h1>
      <div class="mobileonly"><a class="showLink" onclick="toggle_visibility('welcome');">
      <p>Show/Hide Welcome Message and Terms</p>
      </a></div>
@@ -82,7 +82,7 @@
      <div class="span8">
      <div class="row">
      <div class="box">
-     <h3>Free Access:</h3>
+     <h3>Free Ad-Sponsored Access:</h3>
      <!-- This is the "Enter" button for "Open" networks. -->
      <form method="get" action="$authaction">
          <input name="tok" value="$tok" type="hidden" /> <input name="redir" value="$redir" type="hidden" /><button class="button" type="submit">Continue</button>
@@ -106,13 +106,13 @@
      <div></div>
      <!-- Google Analytics -->
 <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-37457117-2']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-37457117-2']);
+                _gaq.push(['_trackPageview']);
+                (function() {
+                  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
 </script></body>
 </html>
