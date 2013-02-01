@@ -20,7 +20,68 @@
                                   else
                                      e.style.display = 'block';
                                }
-</script></head>
+</script>
+
+  <!-- Selectable Media setup -->
+   <script type="text/javascript">
+
+    window._sm_plcmnt = "Guest_2_Web_5241_5133"; // DO NOT CHANGE
+
+    // OPTIONAL CALLBACKS:
+    window._sm_augur_completed_with_ads = 'adsWatched';
+    window._sm_augur_completed_no_ads = 'noAdsWatched';
+
+    // called by body onload event handler
+    function startSelectableMedia() {
+      //HACK to ignore SelectableMedia if coming from mobile device
+      var isMobile = {
+          Android: function() {
+              return navigator.userAgent.match(/Android/i);
+          },
+          BlackBerry: function() {
+              return navigator.userAgent.match(/BlackBerry/i);
+          },
+          iOS: function() {
+              return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+          },
+          Opera: function() {
+              return navigator.userAgent.match(/Opera Mini/i);
+          },
+          Windows: function() {
+              return navigator.userAgent.match(/IEMobile/i);
+          },
+          any: function() {
+              return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+          }
+      };
+
+      if( isMobile.any() ) 
+      {
+        noAdsWatched();
+      } else
+      {
+        SM_Augur.init();
+      }
+    }
+
+    // called after user has watched an ad
+    function adsWatched() {
+          console.debug("adsWatched");
+          document.getElementById('freeConnect').submit()
+    }
+
+    // called when there are no videos to watch so just connect to web
+    function noAdsWatched() {
+          console.debug("noAdsWatched");
+          document.getElementById('freeConnect').submit()
+    }
+   </script>
+
+   <!-- Selectable Media js -->
+   <script src="https://cdn.selectablemedia.com/ng/js/augur.js" type="text/javascript" charset="utf-8"></script>
+   <script src="https://cdn.selectablemedia.com/ng/pub.js"></script>
+
+</head>
 <!-- Change the background color and add an image here -->
 <body style="background-image: url(http://www.cloudtrax.com/users/test%20location/work/images/backgroundsplash-rest.jpg); background-color: #0e0e0e;">
      <div class="container">
@@ -84,9 +145,10 @@
      <div class="box">
      <h3>Free Ad-Sponsored Access:</h3>
      <!-- This is the "Enter" button for "Open" networks. -->
-     <form method="get" action="$authaction">
-         <input name="tok" value="$tok" type="hidden" /> <input name="redir" value="$redir" type="hidden" /><button class="button" type="submit">Continue</button>
+     <form id="freeConnect" method="get" action="$authaction">
+         <input name="tok" value="$tok" type="hidden" /> <input name="redir" value="$redir" type="hidden" /><button type="submit" hidden="hidden">CloudTraxContinue</button>
      </form>
+     <button class="button" type="submit" onclick="startSelectableMedia();">Continue</button>
      </div>
      <div class="box">
      <h3>Premium Access:</h3>
