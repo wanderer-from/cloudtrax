@@ -1,0 +1,1 @@
+document.write('<div id="adblock_checker" style="display:none;">Advertisement</div>');
