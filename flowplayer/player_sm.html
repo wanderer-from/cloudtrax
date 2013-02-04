@@ -14,18 +14,19 @@
    <link href="css/responsive.css" rel="stylesheet" />
   
    <!--Script to check for advertisement blocking-->
-<script src="advertisment.js"></script>
-<script type="text/javascript">
-  if(document.getElementById('adblock_checker') != undefined)
-  {
-    //Ads are not blocked
-  }
-  else
-  {
-    document.documentElement.innerHTML = ""; //This should clear all of the page's HTML
-    alert("Please disable any adblocking software you have installed to access our free wi-fi connection.");
-  }
-</script>
+  <script src="advertisment.js"></script>
+  <script type="text/javascript">
+    if(document.getElementById('adblock_checker') != undefined)
+    {
+      //Ads are not blocked
+    }
+    else
+    {
+      document.documentElement.innerHTML = ""; //This should clear all of the page's HTML
+      alert("Please disable any ad-blocking software you have installed to access our free wi-fi connection.");
+    }
+  </script>
+  <!--end advertisement blocking script-->
 
    <!-- Selectable Media setup -->
    <script type="text/javascript">
