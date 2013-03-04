@@ -21,75 +21,14 @@
                                      e.style.display = 'block';
                                }
 </script>
-
-  <!-- Selectable Media setup -->
-   <script type="text/javascript">
-
-    window._sm_plcmnt = "Guest_2_Web_5241_5133"; // DO NOT CHANGE
-    window._sm_uid = Math.floor(Math.random()*999999999); // for sub-60 minute refreshes
-
-    // CALLBACKS:
-    window._sm_augur_completed_with_ads = 'adsWatched';
-    window._sm_augur_completed_no_ads = 'noAdsWatched';
-
-    // called by body onload event handler
-    function startSelectableMedia() {
-      //HACK to ignore SelectableMedia if coming from mobile device
-      var isMobile = {
-          Android: function() {
-              return navigator.userAgent.match(/Android/i);
-          },
-          BlackBerry: function() {
-              return navigator.userAgent.match(/BlackBerry/i);
-          },
-          iOS: function() {
-              return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-          },
-          Opera: function() {
-              return navigator.userAgent.match(/Opera Mini/i);
-          },
-          Windows: function() {
-              return navigator.userAgent.match(/IEMobile/i);
-          },
-          any: function() {
-              return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-          }
-      };
-
-      if( isMobile.any() ) 
-      {
-        noAdsWatched();
-      } else
-      {
-        SM_Augur.init();
-      }
-    }
-
-    // called after user has watched an ad
-    function adsWatched() {
-          console.debug("adsWatched");
-          document.getElementById('freeConnect').submit()
-    }
-
-    // called when there are no videos to watch so just connect to web
-    function noAdsWatched() {
-          console.debug("noAdsWatched");
-          document.getElementById('freeConnect').submit()
-    }
-   </script>
-
-   <!-- Selectable Media js -->
-   <script src="https://cdn.selectablemedia.com/ng/js/augur.js" type="text/javascript" charset="utf-8"></script>
-   <script src="https://cdn.selectablemedia.com/ng/pub.js"></script>
-
 </head>
 <!-- Change the background color and add an image here -->
-<body style="background-image: url(http://www.cloudtrax.com/users/test%20location/work/images/backgroundsplash-rest.jpg); background-color: #0e0e0e;">
+<body style="background-image: url(http://www.cloudtrax.com/users/kirkland/work/images/backgroundsplash-rest.jpg); background-color: #0e0e0e;">
      <div class="container">
      <!-- Logo -->
-     <div class="page-header"><img alt="CloudTrax Logo" src="/users/test%20location/work/images/Wi_Fi_Logo.png" width="120" height="47" /> </div>
+     <div class="page-header"><img alt="Days Inn Logo" src="/users/kirkland/work/images/Days_Inn_Logo.jpg" width="120" height="67" /> </div>
      <!-- Header Image * ID "rounded" automatically adds rounded corners -->
-     <div id="rounded"><img alt="Header photo 800x166" src="/users/test%20location/work/images/header-rest.jpg" /> </div>
+     <div id="rounded"><img alt="Header photo 800x166" src="/users/kirkland/work/images/header-rest.jpg" /> </div>
      <!-- Main Content -->
      <!-- Left Column -->
      <div class="row">
@@ -99,7 +38,6 @@
      <p>Show/Hide Welcome Message and Terms</p>
      </a></div>
      <div id="welcome" class="welcome">
-     <p>Guest2Web is online!</p>
      <p><strong>By continuing, you agree to the terms and conditions.</strong></p>
      <div style="height:140px;width:97%;border:1px solid #ccc;overflow:auto;margin-bottom:15px;padding:5px;">
      <p><small><strong>Terms and Conditions</strong></small></p>
@@ -211,10 +149,80 @@
      </div>
      <!-- /container -->
      <div></div>
+       <!-- Selectable Media setup -->
+   <script type="text/javascript">
+
+   var adTimeout;
+
+    window._sm_plcmnt = "Guest_2_Web_5241_5133"; // DO NOT CHANGE
+    window._sm_uid = Math.floor(Math.random()*999999999); // for sub-60 minute refreshes
+
+    // CALLBACKS:
+    window._sm_augur_completed_with_ads = 'adsWatched';
+    window._sm_augur_completed_no_ads = 'noAdsWatched';
+
+    // called by body onload event handler
+    function startSelectableMedia() {
+      //HACK to ignore SelectableMedia if coming from mobile device
+      var isMobile = {
+          Android: function() {
+              return navigator.userAgent.match(/Android/i);
+          },
+          BlackBerry: function() {
+              return navigator.userAgent.match(/BlackBerry/i);
+          },
+          iOS: function() {
+              return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+          },
+          Opera: function() {
+              return navigator.userAgent.match(/Opera Mini/i);
+          },
+          Windows: function() {
+              return navigator.userAgent.match(/IEMobile/i);
+          },
+          any: function() {
+              return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+          }
+      };
+
+      if( isMobile.any() ) 
+      {
+        noAdsWatched();
+      } else
+      {
+        // fallback in case ad fails to launch for some reason
+        adTimeout = setTimeout('freeConnect()', 100000);
+        SM_Augur.init();
+      }
+    }
+
+    // get connected with free tier
+    function freeConnect() {
+        clearTimeout(adTimeout);
+        document.getElementById('freeConnect').submit()
+    }
+
+    // called after user has watched an ad
+    function adsWatched() {
+          console.debug("adsWatched");
+          freeConnect();
+    }
+
+    // called when there are no videos to watch so just connect to web
+    function noAdsWatched() {
+          console.debug("noAdsWatched");
+          freeConnect();
+    }
+   </script>
+
+   <!-- Selectable Media js -->
+   <script src="https://cdn.selectablemedia.com/ng/js/augur.js" type="text/javascript" charset="utf-8"></script>
+   <script src="https://cdn.selectablemedia.com/ng/pub.js"></script>
      <!-- Google Analytics -->
 <script type="text/javascript">
                 var _gaq = _gaq || [];
                 _gaq.push(['_setAccount', 'UA-37457117-2']);
+                _gaq.push(['_setDomainName', 'guest2web.com']);
                 _gaq.push(['_trackPageview']);
                 (function() {
                   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
