@@ -26,9 +26,9 @@
    <script type="text/javascript">
 
     window._sm_plcmnt = "Guest_2_Web_5241_5133"; // DO NOT CHANGE
-    window._sm_uid = Math.floor(Math.random()*999999999); // optional
+    window._sm_uid = Math.floor(Math.random()*999999999); // for sub-60 minute refreshes
 
-    // OPTIONAL CALLBACKS:
+    // CALLBACKS:
     window._sm_augur_completed_with_ads = 'adsWatched';
     window._sm_augur_completed_no_ads = 'noAdsWatched';
 
@@ -144,7 +144,7 @@
      <div class="span8">
      <div class="row">
      <div class="box">
-     <h3>Free Ad-Sponsored Access:</h3>
+     <h3><span style="font-size: 12pt;">Complimentary Internet Access </span><span style="font-size: 10pt;">(512kbps):</span></h3>
      <!-- This is the "Enter" button for "Open" networks. -->
      <form id="freeConnect" method="get" action="$authaction">
          <input name="tok" value="$tok" type="hidden" /> <input name="redir" value="$redir" type="hidden" /><button type="submit" hidden="hidden">CloudTraxContinue</button>
@@ -152,7 +152,14 @@
      <button class="button" type="submit" onclick="startSelectableMedia();">Continue</button>
      </div>
      <div class="box">
-     <h3>Premium Access:</h3>
+     <h3><span style="font-size: 14pt;">Premium Internet Access</span></h3>
+     <div>
+      <ul>
+        <li><font color="#333333"><span style="font-size: 14px; line-height: 19px;">10x faster speed (<strong><em>5 Mbps</em></strong>)</span></font></li>
+             <li><font color="#333333"><span style="font-size: 14px; line-height: 19px;">Connect 3 devices</span></font></li>
+             <li><font color="#333333"><span style="font-size: 14px; line-height: 19px;">No ads</span></font></li>
+    </ul>
+    </div>
      <!-- PayPal Button Start -->
      <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
          <input type="hidden" name="cmd" value="_s-xclick" />
