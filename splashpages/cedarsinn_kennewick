@@ -13,13 +13,13 @@
          <style type="text/css">
          /** This template is responsive, which means it scales down to mobile phones using a variation in the stylesheets above. However, you can still add any custom styles or style overrides here. To edit the content of your page, the logo and the header image, scroll down. Enjoy! **/ </style>
 <script language="javascript" type="text/javascript">
-                                                                         function toggle_visibility(id) {
-                                                                            var e = document.getElementById(id);
-                                                                            if(e.style.display == 'block')
-                                                                               e.style.display = 'none';
-                                                                            else
-                                                                               e.style.display = 'block';
-                                                                         }
+                                                                                      function toggle_visibility(id) {
+                                                                                         var e = document.getElementById(id);
+                                                                                         if(e.style.display == 'block')
+                                                                                            e.style.display = 'none';
+                                                                                         else
+                                                                                            e.style.display = 'block';
+                                                                                      }
 </script></head>
 <!-- Change the background color and add an image here -->
 <body style="background-image: url(http://www.cloudtrax.com/users/cedarsinn_kennewick/work/images/backgroundsplash-rest.jpg); background-color: #0e0e0e;">
@@ -28,7 +28,7 @@
          <!-- Logo -->
          <div class="page-header"><img alt="Cedars Inn" src="/users/cedarsinn_kennewick/work/images/CedarsInn_Kennewick.png" height="89" width="205" /> </div>
          <!-- Header Image * ID "rounded" automatically adds rounded corners -->
-         <div id="rounded"><img src="/users/cedarsinn_kennewick/work/images/header-rest.jpg" alt="Header photo" height="166" width="800" /> </div>
+         <div id="rounded"><img alt="" src="/users/cedarsinn_kennewick/work/images/header-rest.jpg" height="166" width="800" /> </div>
          <!-- Main Content -->
          <!-- Left Column -->
          <div class="row">
@@ -38,7 +38,18 @@
          <p>Show/Hide Welcome Message and Terms</p>
          </a></div>
          <div id="welcome" class="welcome">
+         <p><span style="font-size: 14pt;">&nbsp;</span><span style="font-size: 14pt;">Choose from 3 connection options:</span><br />
+         </p>
+         <div>
+         <ol>
+             <li><span style="font-size: 12pt;">60 minutes of basic browsing after watching a short advertisement</span></li>
+             <li><span style="font-size: 12pt;">A faster, 24 hour continuous ad-free session for up to 3 devices (approximately up to 8x faster)</span></li>
+             <li><span style="font-size: 12pt;">If you already purchased an upgrade, enter your voucher code below</span></li>
+         </ol>
          <p>&nbsp;</p>
+         <div><em>Once online, send questions to customerservice@guest2web.com</em></div>
+         <div>&nbsp;</div>
+         </div>
          <p><strong>By continuing, you agree to the terms and conditions.</strong></p>
          <div style="height:140px;width:97%;border:1px solid #ccc;overflow:auto;margin-bottom:15px;padding:5px;">
          <p><small><strong>Terms and Conditions</strong></small></p>
@@ -83,17 +94,19 @@
          <div class="span8">
          <div class="row">
          <div class="box">
-         <h3><span style="font-size: 12pt;">Complimentary Internet Access </span><span style="font-size: 10pt;">(512kbps):</span></h3>
+         <h3><span style="font-size: 12pt;"><strong>Option 1</strong><br />
+         <strong>60 Minutes Ad-Supported </strong>Basic Browsing </span><span style="font-size: 10pt;">(512kbps):</span></h3>
          <!-- This is the "Enter" button for "Open" networks. -->
          <form method="get" action="$authaction">
              <input name="tok" value="$tok" type="hidden" /> <input name="redir" value="$redir" type="hidden" /><button class="button" type="submit">Click To Continue</button>
          </form>
          </div>
          <div class="box">
-         <h3><span style="font-size: 14pt;">Premium Internet Access</span></h3>
+         <h3><span style="font-size: 12pt;"><strong>Option 2</strong><br />
+         <span style="font-size: 14pt;">Premium Internet Access</span></span></h3>
          <div>
          <ul>
-             <li><font color="#333333"><span style="font-size: 14px; line-height: 19px;">10x faster speed (<strong><em>5 Mbps</em></strong>)</span></font></li>
+             <li><font color="#333333"><span style="font-size: 14px; line-height: 19px;">Faster speed (<strong><em>Up to 5 Mbps</em></strong>)</span></font></li>
              <li><font color="#333333"><span style="font-size: 14px; line-height: 19px;">Connect 3 devices</span></font></li>
              <li><font color="#333333"><span style="font-size: 14px; line-height: 19px;">No ads</span></font></li>
          </ul>
@@ -101,7 +114,7 @@
          <!-- PayPal Button Start -->
          <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
              <input name="cmd" value="_s-xclick" type="hidden" />
-             <input name="hosted_button_id" value="UB25UTGCFP2UY" type="hidden" />
+             <input name="hosted_button_id" value="VVFUGSYB35Z5Q" type="hidden" />
              <table>
                  <tbody>
                      <tr>
@@ -120,7 +133,7 @@
          </form>
          <!-- PayPal Button End -->
          </div>
-         <div class="box">
+         <div class="box"><span style="font-size: 12pt;"><strong>Option 3</strong><br />
          <h3>Passcode Access:</h3>
          <p>Enter your access code below:</p>
          <!-- Voucher Error messages (not found, expired, etc) will be displayed using this variable - do not remove -->
@@ -132,7 +145,7 @@
              <input class="inputbox" name="voucher" size="6" type="text" />&nbsp;
              <button class="button" type="SUBMIT">Login</button>
          </form>
-         </div>
+         </span></div>
          </div>
          </div>
          <!-- /.span -->
@@ -151,13 +164,13 @@
          <div></div>
          <!-- Google Analytics -->
 <script type="text/javascript">
-                                                          var _gaq = _gaq || [];
-                                                          _gaq.push(['_setAccount', 'UA-37457117-8']);
-                                                          _gaq.push(['_trackPageview']);
-                                                          (function() {
-                                                            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                                                            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                                                            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-                                                          })();
+                                                                       var _gaq = _gaq || [];
+                                                                       _gaq.push(['_setAccount', 'UA-37457117-7']);
+                                                                       _gaq.push(['_trackPageview']);
+                                                                       (function() {
+                                                                         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                                                                         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                                                                         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                                                                       })();
 </script></body>
 </html>
