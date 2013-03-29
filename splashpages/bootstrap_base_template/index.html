@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Guest2Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/g2w.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Selectable Media js -->
+    <script src="https://cdn.selectablemedia.com/ng/js/augur.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.selectablemedia.com/ng/pub.js"></script>
+
+    <!-- Selectable Media setup -->
+    <script type="text/javascript">
+      window._sm_plcmnt = "Guest_2_Web_5241_5133"; // DO NOT CHANGE
+      window._sm_uid = Math.floor(Math.random()*999999999); // optional
+
+      // OPTIONAL CALLBACKS:
+      window._sm_augur_completed_with_ads = 'adsWatched';
+      window._sm_augur_completed_no_ads = 'noAdsWatched';
+
+      // called by body onload event handler
+      function startSelectableMedia() {
+        //HACK to ignore SelectableMedia if coming from mobile device
+        var isMobile = {
+            Android: function() {
+                return navigator.userAgent.match(/Android/i);
+            },
+            BlackBerry: function() {
+                return navigator.userAgent.match(/BlackBerry/i);
+            },
+            iOS: function() {
+                return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+            },
+            Opera: function() {
+                return navigator.userAgent.match(/Opera Mini/i);
+            },
+            Windows: function() {
+                return navigator.userAgent.match(/IEMobile/i);
+            },
+            any: function() {
+                return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+            }
+        };
+
+        if( isMobile.any() ) 
+        {
+          noAdsWatched();
+        } else
+        {
+          SM_Augur.init();
+        }
+      }
+
+      // called after user has watched an ad
+      function adsWatched() {
+            console.debug("adsWatched");
+            document.getElementById('freeConnect').submit()
+      }
+
+      // called when there are no videos to watch so just connect to web
+      function noAdsWatched() {
+            console.debug("noAdsWatched");
+            document.getElementById('freeConnect').submit()
+      }
+    </script>
+
+    <!-- Bootstrap & jQuery, required for modal -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container-narrow rounded">
+      <div class="jumbotron">
+        <h3 class="pull-left muted">
+          Afternoon Delight Inn
+          <!--<img alt="CloudTrax Logo" src="../img/Wi_Fi_Logo.png" width="120" height="47">-->
+        </h3>
+        <img src="../img/header-rest.jpg" alt="Image of hotel room" class="roundedCorners">
+        <h2>We Believe in Giving Options</h2>
+      </div>
+
+      <div class="row-fluid marketing">
+        <div class="span4 rounded">
+          <h4>Option 1: Basic Internet</h4>
+            <p>60 minute session supported by ads</p>
+            <br>
+            <ul class="benefits">
+              <lh><strong>It's good for:</strong></lh>
+              <li>E-mail</li>
+              <li>Social Networking</li>
+              <li>Basic Browsing</li>
+            </ul>
+            <form method="get" action="$authaction">
+              <input name="tok" value="$tok" type="hidden">
+              <input name="redir" value="$redir" type="hidden">
+              <button class="btn" type="submit">Continue</button>
+            </form>
+        </div>
+
+        <div class="span4 rounded">
+          <h4>Option 2: Premium Internet</h4>
+          <p>24 hour uninterrupted session with up to 5 times the speed</p>
+          <br>
+          <ul class="benefits">
+            <lh><strong>It's good for:</strong></lh>
+            <li>Skype</li>
+            <li>HD Videos</li>
+            <li>Gaming</li>
+            <li>Faster Browsing</li>
+          </ul>
+          <!-- PayPal Button Start -->
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="BVRU67JBDDRLG">
+            <input type="hidden" name="on0" value="Higher Speed, No Ads">
+            Choose your payment package<br>
+            <select name="os0" class="span10" disabled>
+              <option value="24 Hours">24 Hours $1.99 USD</option>
+            </select>
+            <br>
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+          </form>
+          <!-- PayPal Button End -->
+        </div>
+
+        <div class="span4 rounded">
+          <h4>Option 3: Prepaid Voucher</h4>
+          <p>If you have a voucher code, please enter it below to connect:</p>
+          <p class="error"></p>
+          <!-- This the the "Enter" button for "Voucher" networks. -->
+          <form method="get" action="$authaction" class="form-inline">
+            <input name="tok" value="$tok" type="hidden">
+            <input name="redir" value="$redir" type="hidden">
+            <input class="input-small" name="voucher" size="6" type="text">
+            <button class="btn" type="SUBMIT">Login</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="agree">
+        <p><strong>By continuing, you agree to the
+            <a href="#myModal" role="button" data-toggle="modal">terms and conditions.</a>
+        </strong></p>
+      </div>
+
+      <div class="footer">
+        <p>&copy; Guest2Web 2013</p>
+      </div>
+
+    </div> <!-- /container -->
+
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 style="text-align: center;">Terms and Conditions</h3>
+      </div>
+      <div class="modal-body">
+        <div id="tnc">
+            <p><small>By using our internet service, you hereby expressly acknowledge and agree that there are significant security, privacy and confidentiality risks inherent in accessing or transmitting information through the internet, whether the connection is facilitated through wired or wireless technology. Security issues include, without limitation, interception of transmissions, loss of data, and the introduction or viruses and other programs that can corrupt or damage your computer.</small></p>
+            <p><small>Accordingly, you agree that the owner and/or provider of this network is NOT liable for any interception or transmissions, computer worms or viruses, loss of data, file corruption, hacking or damage to your computer or other devices that result from the transmission or download of information or materials through the internet service provided.</small></p>
+            <p><small>Use of the wireless network is subject to the general restrictions outlined below. If abnormal, illegal, or unauthorized behavior is detected, including heavy consumption of bandwidth, the network provider reserves the right to permanently disconnect the offending device from the wireless network.</small></p>
+            <p><small><strong>Examples of Illegal Uses</strong></small></p>
+            <p><small>The following are representative examples only and do not comprise a comprehensive list of illegal uses:</small></p>
+            <ol>
+                <li>Spamming and invasion of privacy - Sending of unsolicited bulk and/or commercial messages over the Internet using the Service or using the Service for activities that invade another's privacy.</li>
+                <li>Intellectual property right violations - Engaging in any activity that infringes or misappropriates the intellectual property rights of others, including patents, copyrights, trademarks, service marks, trade secrets, or any other proprietary right of any third party.</li>
+                <li>Accessing illegally or without authorization computers, accounts, equipment or networks belonging to another party, or attempting to penetrate/circumvent security measures of another system. This includes any activity that may be used as a precursor to an attempted system penetration, including, but not limited to, port scans, stealth scans, or other information gathering activity.</li>
+                <li>The transfer of technology, software, or other materials in violation of applicable export laws and regulations.</li>
+                <li>Export Control Violations</li>
+                <li>Using the Service in violation of applicable law and regulation, including, but not limited to, advertising, transmitting, or otherwise making available ponzi schemes, pyramid schemes, fraudulently charging credit cards, pirating software, or making fraudulent offers to sell or buy products, items, or services.</li>
+                <li>Uttering threats;</li>
+                <li>Distribution of pornographic materials to minors;</li>
+                <li>and Child pornography. </li>
+            </ol>
+            <p><small><strong>Examples of Unacceptable Uses</strong></small></p>
+            <p><small>The following are representative examples only and do not comprise a comprehensive list of unacceptable uses:</small></p>
+            <ol>
+                <li>High bandwidth operations, such as large file transfers and media sharing with peer-to-peer programs (i.e.torrents)</li>
+                <li>Obscene or indecent speech or materials</li>
+                <li>Defamatory or abusive language</li>
+                <li>Using the Service to transmit, post, upload, or otherwise making available defamatory, harassing, abusive, or threatening material or language that encourages bodily harm, destruction of property or harasses another.</li>
+                <li>Forging or misrepresenting message headers, whether in whole or in part, to mask the originator of the message.</li>
+                <li>Facilitating a Violation of these Terms of Use</li>
+                <li>Hacking</li>
+                <li>Distribution of Internet viruses, Trojan horses, or other destructive activities</li>
+                <li>Distributing information regarding the creation of and sending Internet viruses, worms, Trojan horses, pinging, flooding, mail-bombing, or denial of service attacks. Also, activities that disrupt the use of or interfere with the ability of others to effectively use the node or any connected network, system, service, or equipment.</li>
+                <li>Advertising, transmitting, or otherwise making available any software product, product, or service that is designed to violate these Terms of Use, which includes the facilitation of the means to spam, initiation of pinging, flooding, mail-bombing, denial of service attacks, and piracy of software.</li>
+                <li>The sale, transfer, or rental of the Service to customers, clients or other third parties, either directly or as part of a service or product created for resale.</li>
+                <li>Seeking information on passwords or data belonging to another user.</li>
+                <li>Making unauthorized copies of proprietary software, or offering unauthorized copies of proprietary software to others.</li>
+                <li>Intercepting or examining the content of messages, files or communications in transit on a data network. </li>
+            </ol>
+        </div>
+      </div>
+      <div class="modal-footer" style="text-align: center;">
+        <a href="#" class="btn" data-dismiss="modal" aria-hidden="true">Close</a>
+      </div>
+    </div>
+  </body>
+</html>

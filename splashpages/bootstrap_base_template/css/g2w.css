@@ -1,0 +1,90 @@
+body {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+/* Custom container */
+.container-narrow {
+  margin: 0 auto;
+  max-width: 800px;
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  margin: 60px 0;
+  text-align: center;
+}
+.jumbotron h1 {
+  font-size: 72px;
+  line-height: 1;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 60px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+/*shak add*/
+.container-narrow {
+  background-color: whitesmoke;
+  padding: 0 30px 20px;
+}
+img.roundedCorners {
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius:10px;
+  /*border:1px solid #dcdcdc;*/
+}
+.rounded {
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius:10px;
+}
+.jumbotron {
+  margin: 20px 0 5px 0 !important;
+}
+.marketing {
+  margin: 10px 0 !important;
+}
+body {
+  padding-top: 0 !important;
+  background-image: url('../img/background.jpg');
+}
+#tnc {
+  text-align: center;
+  /*height:140px;*/
+
+  width:97%;
+  border:1px solid #ccc;
+  overflow:auto;
+  margin-bottom:15px;
+  padding:5px;
+  background-color: white;
+}
+.span4{
+  background-color: lightgrey;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.benefits {
+  text-align: left;
+  margin-left: 25%;
+}
+#agree {
+  text-align: center;
+}
